@@ -1,0 +1,26 @@
+<div class="input-group" [formGroup]="form">
+
+  <div *ngIf="showInputUpload && !avaliador">
+    <input type="file" (change)="onSelectFile($event)" formControlName="documento" accept="application/pdf"
+      placeholder="{{ 'file_upload.label.document' | translate }}"
+      matTooltip="{{ 'file_upload.label.message.document' | translate }}" matTooltipPosition="above">
+  </div>
+  <div class="row" *ngIf="!showInputUpload">
+    <div class="col">
+      <div class="form-group">
+        <button type="button" mat-stroked-button (click)="openPDF()"
+          matTooltip="{{ 'file_upload.label.message.view_pdf' | translate }}" matTooltipPosition="above">
+          <i class="material-icons"> picture_as_pdf </i> {{ 'button.view_pdf' | translate }}
+        </button>
+      </div>
+    </div>
+    <div class="col" *ngIf="!avaliador">
+      <div class="form-group">
+        <button type="button" mat-stroked-button (click)="changeInputUpload()"
+          matTooltip="{{ 'file_upload.label.message.update_document' | translate }}" matTooltipPosition="above">
+          <i class="material-icons"> attach_file </i> {{ 'button.update_document' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

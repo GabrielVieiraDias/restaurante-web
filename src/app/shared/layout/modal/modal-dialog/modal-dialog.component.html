@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h4 *ngIf="!data.warnings" class="modal-title pull-left">{{ data.title }}</h4>
+  <h4 *ngIf="data.warnings" class="text-danger">{{ 'scad.attention' | translate }}</h4>
+</div>
+<div class="modal-body">
+  <div class="container-fluid" *ngIf="!data.warnings">
+    {{ data.message }}
+  </div>
+  <div class="container-fluid" *ngIf="data.warnings">
+    <h5 *ngIf="!data.hideTitle" class="message">{{ data.message }}</h5>
+    <ul>
+      <li *ngFor="let warning of data.warnings"> {{ warning }} </li>
+    </ul>
+  </div>
+</div>
+<div class="modal-footer">
+  <button mat-raised-button color="warn" data-dismiss="modal" (click)="onNoClick()">
+    <i class="material-icons"> close </i> {{ 'button.close' | translate }}
+  </button>
+</div>

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark navbar-expand-md justify-content-center shadow">
+  <div class="container-fluid">
+    <a href="/" class="navbar-brand d-flex w-50 mr-auto">
+      <img [src]="logo" id="logo" class="img-fluid" alt="{{ 'scad.logo_alt' | translate }}">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar" (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-100" [ngClass]="{ 'show': navbarOpen }" id="collapsingNavbar">
+      <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="">{{ 'navbar.home' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/relatorio">{{ 'navbar.report' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tabelaPontuacao">{{ 'navbar.activity_type_table' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tipoAtividade">{{ 'navbar.activity_type' | translate }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/atividade">{{ 'navbar.activity' | translate }}</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="logout()" routerLink="">{{ 'navbar.logout' | translate }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

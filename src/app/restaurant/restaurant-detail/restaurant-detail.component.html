@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <h4 class="title">{{ title }}</h4>
+  <form id="restaurantForm" [formGroup]="restaurantForm" (ngSubmit)="submit()">
+    <input type="number" formControlName="id" hidden>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <mat-form-field class="input-full-width">
+            <input required matInput #codigo formControlName="name" placeholder="{{ 'restaurant.label.name' | translate }}"
+              matTooltip="{{ 'restaurant.label.message.name' | translate }}" matTooltipPosition="above">
+            <mat-error *ngIf="f.name.touched && f.name.errors" class="invalid-feedback">
+              <span *ngIf="f.name.errors.required"> {{ 'restaurant.validate.name.required' | translate }} </span>
+              <span *ngIf="f.name.errors.minlength"> {{ 'restaurant.validate.name.minlength' | translate }} </span>
+              <span *ngIf="f.name.errors.maxlength"> {{ 'restaurant.validate.name.maxlength' | translate }} </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <button type="button" mat-stroked-button color="primary" routerLink="{{ 'routes.restaurant.list' | translate }}">
+            <i class="material-icons"> reply_all </i> {{ 'button.cancel' | translate }}
+          </button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <button type="submit" mat-stroked-button color="primary" class="float-right" [disabled]="restaurantForm.invalid">
+            <i class="material-icons"> save </i> {{ 'button.save' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

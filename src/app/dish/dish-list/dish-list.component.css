@@ -1,0 +1,40 @@
+mat-cell {
+    padding: 24px;
+}
+
+.header {
+    min-height: 64px;
+    padding: 8px 24px 0;
+}
+
+.filter {
+    text-align: right
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 60%;
+}
+
+.button {
+    margin: 5px
+}
+
+@media screen and (max-width: 2560px) and (min-width: 768px) {
+
+    .mat-column-id {
+        max-width: 15%;
+    }
+
+    .mat-column-description {
+        max-width: 40%;
+    }
+
+    .mat-column-price {
+        max-width: 15%;
+    }
+
+    .mat-column-restaurant {
+        max-width: 30%;
+    }
+}

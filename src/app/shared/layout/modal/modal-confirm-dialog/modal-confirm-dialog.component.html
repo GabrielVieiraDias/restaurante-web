@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">{{ data.title }}</h4>
+</div>
+<div class="modal-footer">
+  <button mat-raised-button color="warn" data-dismiss="modal" (click)="onCloseCancel()">
+    <i class="material-icons"> close </i> {{ 'button.no' | translate }}
+  </button>
+  <button mat-raised-button color="primary" data-dismiss="modal" (click)="onCloseConfirm()">
+    <i class="material-icons"> done_all </i> {{ 'button.yes' | translate }}
+  </button>
+</div>

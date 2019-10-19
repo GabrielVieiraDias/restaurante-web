@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <h4 class="title">{{ 'restaurant.title.list' | translate }}</h4>
+  <div class="header">
+    <div class="row">
+      <div class="col">
+        <button class="button" type="button" mat-stroked-button color="primary"
+          routerLink="{{ 'routes.restaurant.new' | translate }}">
+          <i class="material-icons"> playlist_add </i> {{ 'restaurant.title.new' | translate }}
+        </button>
+      </div>
+      <div class="col filter">
+        <mat-form-field>
+          <input matInput (keyup)="applyFilter($event.target.value)" placeholder="{{ 'restaurant-app.filter' | translate }}">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'restaurant.label.name' | translate }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{ element.name }} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> {{ 'button.action' | translate }}
+        </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <a mat-icon-button color="primary" focusable="false"
+            routerLink="{{ 'routes.restaurant.edit' | translate: { id: element.id } }}">
+            <i class="material-icons"> edit </i>
+          </a>
+          <button mat-icon-button color="primary" focusable="false" (click)="openConfirmDialog(element)">
+            <i class="material-icons"> delete_sweep </i>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="container-fluid telaLogin">
+  <div class="row">
+    <div class="col">
+      <img id="logo" [src]="logo" class="img-fluid" alt="{{ 'scad.logo_alt' | translate }}">
+    </div>
+  </div>
+  <div class="row">
+    <div class="box-shadow">
+      <div *ngIf="showMessageError" class="alert alert-danger fade show" role="alert">
+        <i class="material-icons">error</i>{{ 'login.email_or_password_invalid' | translate }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="closeInvalidUserMessage()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="OnSubmit()">
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <mat-form-field class="input-full-width">
+                <input type="text" matInput #Email formControlName="email" maxlength="50" placeholder="{{ 'login.label.email' | translate }}" required>
+                <mat-icon matSuffix> email </mat-icon>
+                <mat-error *ngIf="f.email.touched && f.email.errors">
+                  <span *ngIf="f.email.errors.required">{{ 'login.email_required' | translate }}</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <mat-form-field class="input-full-width">
+                <input type="password" matInput #Password formControlName="password" maxlength="50" placeholder="{{ 'login.label.password' | translate }}" required>
+                <mat-icon matSuffix> lock </mat-icon>
+                <mat-error *ngIf="f.password.touched && f.password.errors">
+                  <span *ngIf="f.password.errors.required">{{ 'login.password_required' | translate }}</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <button [disabled]="!loginForm.valid" mat-stroked-button color="primary" class="btn btn-large btn-submit" type="submit">
+                {{ 'login.login' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

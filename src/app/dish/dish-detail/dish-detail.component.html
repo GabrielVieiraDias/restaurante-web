@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <h4 class="title">{{ title }}</h4>
+  <form id="dishForm" [formGroup]="dishForm" (ngSubmit)="submit()">
+    <input type="number" formControlName="id" hidden>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <mat-form-field class="input-full-width">
+            <mat-select required #restaurant_id formControlName="restaurant_id"
+              placeholder="{{ 'dish.label.restaurant' | translate }}"
+              matTooltip="{{ 'dish.label.message.restaurant' | translate }}" matTooltipPosition="above"
+              matSearchable [clearSearchInput]="true">
+              <mat-searchable-input placeholder="{{ 'restaurant-app.filter' | translate }}"></mat-searchable-input>
+              <ng-container *ngFor="let restaurant of restaurants">
+                <mat-option *matSearchableItem [value]="restaurant.id">
+                  {{ restaurant.name }}
+                </mat-option>
+              </ng-container>
+            </mat-select>
+            <mat-error *ngIf="f.restaurant_id.touched && f.restaurant_id.errors" class="invalid-feedback">
+              <span *ngIf="f.restaurant_id.errors.required"> {{ 'dish.validate.restaurant.required' | translate }}
+              </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <mat-form-field class="input-full-width">
+            <input required matInput #description formControlName="description" placeholder="{{ 'dish.label.description' | translate }}"
+              matTooltip="{{ 'dish.label.message.description' | translate }}" matTooltipPosition="above">
+            <mat-error *ngIf="f.description.touched && f.description.errors" class="invalid-feedback">
+              <span *ngIf="f.description.errors.required"> {{ 'dish.validate.description.required' | translate }} </span>
+              <span *ngIf="f.description.errors.minlength"> {{ 'dish.validate.description.minlength' | translate }} </span>
+              <span *ngIf="f.description.errors.maxlength"> {{ 'dish.validate.description.maxlength' | translate }} </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <mat-form-field class="input-full-width">
+            <input appDecimalNumbersOnly required matInput #price formControlName="price" placeholder="{{ 'dish.label.price' | translate }}"
+              matTooltip="{{ 'dish.label.message.price' | translate }}" matTooltipPosition="above">
+            <mat-error *ngIf="f.price.touched && f.price.errors" class="invalid-feedback">
+              <span *ngIf="f.price.errors.required"> {{ 'dish.validate.price.required' | translate }} </span>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <button type="button" mat-stroked-button color="primary" routerLink="{{ 'routes.dish.list' | translate }}">
+            <i class="material-icons"> reply_all </i> {{ 'button.cancel' | translate }}
+          </button>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <button type="submit" mat-stroked-button color="primary" class="float-right" [disabled]="dishForm.invalid">
+            <i class="material-icons"> save </i> {{ 'button.save' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

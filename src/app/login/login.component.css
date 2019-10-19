@@ -1,0 +1,53 @@
+body {
+    background: #f5f5f5;
+}
+
+button.btn-submit{
+    width: 100%;
+}
+
+
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
+div.error-message i{
+    vertical-align: middle !important;
+}
+
+.telaLogin {
+    max-width: 500px;
+    text-align: center;
+}
+
+#logo {
+    padding: 30px;
+}
+
+#loading {
+    margin-top: 30px;
+}
+
+#loginForm {
+    padding: 20px;
+}
+
+.box-shadow {
+	-webkit-box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+	-moz-box-shadow:    0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+    box-shadow:         0px 10px 20px 0px rgba(50, 50, 50, 0.52);
+    width: 500px;
+}
+
+.input-full-width {
+    width: 100% !important;
+}
+
+.invalid-feedback {
+    display: block;
+}
+
+#logo {
+    width: 200px;
+}

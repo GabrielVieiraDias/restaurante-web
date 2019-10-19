@@ -1,0 +1,157 @@
+{
+    "restaurant-app": {
+        "title": "Restaurant Web",
+        "name": "Restaurant Web.",
+        "logo_alt": "Logo Restaurant",
+        "filter": "Pesquisar",
+        "welcome": "Seja bem vindo(a), {{name}}!",
+        "attention": "Atenção:",
+        "total": "Total"
+    },
+    "navbar": {
+        "home": "Home",
+        "restaurant": "Restaurantes",
+        "dishes": "Pratos",
+        "reserve": "Reserva",
+        "logout": "Sair"
+    },
+    "button": {
+        "close": "Fechar",
+        "save": "Salvar",
+        "update": "Editar",
+        "back": "Voltar",
+        "action": "Ações",
+        "delete": "Excluir",
+        "no": "Não",
+        "yes": "Sim",
+        "filter": "Filtrar",
+        "cancel": "Cancelar"
+    },
+    "routes": {
+        "login": "/login",
+        "home": "/home",
+        "restaurant": {
+            "list": "/restaurant",
+            "new": "/restaurant/new",
+            "edit": "/restaurant/edit/{{id}}"
+        },
+        "dish": {
+            "list": "/dish",
+            "new": "/dish/new",
+            "edit": "/dish/edit/{{id}}"
+        },
+        "reserve": {
+            "list": "/reserve",
+            "new": "/reserve/new",
+            "edit": "/reserve/edit/{{id}}"
+        }
+    },
+    "table": {
+        "ITEMS_PER_PAGE_LABEL": "Itens por página:",
+        "NEXT_PAGE_LABEL": "Próxima página",
+        "PREVIOUS_PAGE_LABEL": "Página anterior",
+        "FIRST_PAGE_LABEL": "Primeira página",
+        "LAST_PAGE_LABEL": "Última página",
+        "RANGE_PAGE_LABEL_1": "0 de {{length}}",
+        "RANGE_PAGE_LABEL_2": "{{startIndex}} - {{endIndex}} de {{length}}"
+    },
+    "login": {
+        "login": "Login",
+        "forgot_password": "Esqueci minha senha",
+        "email_required": "E-mail é obrigatório.",
+        "password_required": "Senha é obrigatório.",
+        "email_or_password_invalid": "E-mail ou senha inválidos.",
+        "label": {
+            "email": "E-mail",
+            "password": "Senha"
+        }
+    },
+    "restaurant": {
+        "title": {
+            "new": "Cadastrar novo restaurante",
+            "edit": "Editar Restaurante",
+            "delete": "Excluir Restaurante",
+            "error": "Erro",
+            "list": "Lista de Restaurantes",
+            "success": "Sucesso"
+        },
+        "message": {
+            "save_success": "Restaurante salvo com sucesso.",
+            "edit_success": "Restaurante atualizado com sucesso.",
+            "delete_success": "Restaurante excluído com sucesso.",
+            "empty_table": "Nenhum restaurante encontrado.",
+            "error_save": "Erro ao salvar restaurante.",
+            "error_edit": "Erro ao editar restaurante.",
+            "error_delete": "Erro ao excluir restaurante.",
+            "error_get": "Erro ao buscar restaurante.",
+            "confirm_delete": "O restaurante será excluído. Tem certeza?"
+        },
+        "label": {
+            "name": "Nome do Restaurante",
+            "message": {
+                "name": "Nome do Restaurante"
+            }
+        },
+        "validate": {
+            "name": {
+                "required": "Nome do Restaurante é obrigatório",
+                "minlength": "Nome do Restaurante deve ter no mínimo 5 caracteres",
+                "maxlength": "Nome do Restaurante deve ter no máximo 100 caracteres"
+            }
+        }
+    },
+    "dish": {
+        "title": {
+            "new": "Cadastrar novo prato",
+            "edit": "Editar Prato",
+            "delete": "Excluir Prato",
+            "error": "Erro",
+            "list": "Lista de Pratos",
+            "success": "Sucesso"
+        },
+        "message": {
+            "save_success": "Prato salvo com sucesso.",
+            "edit_success": "Prato atualizado com sucesso.",
+            "delete_success": "Prato excluído com sucesso.",
+            "empty_table": "Nenhum prato encontrado.",
+            "error_save": "Erro ao salvar prato.",
+            "error_edit": "Erro ao editar prato.",
+            "error_delete": "Erro ao excluir prato.",
+            "error_get": "Erro ao buscar prato.",
+            "confirm_delete": "O prato será excluído. Tem certeza?"
+        },
+        "label": {
+            "description": "Descrição",
+            "price": "Preço",
+            "restaurant": "Restaurante",
+            "message": {
+                "description": "Descrição do prato",
+                "price": "Preço do prato",
+                "restaurant": "Restaurante"
+            }
+        },
+        "validate": {
+            "description": {
+                "required": "Descrição é obrigatório",
+                "minlength": "Descrição deve ter no mínimo 5 caracteres",
+                "maxlength": "Descrição deve ter no máximo 100 caracteres"
+            },
+            "price": {
+                "required": "Preço é obrigatório"
+            },
+            "restaurant": {
+                "required": "Restaurante é obrigatório"
+            }
+        }
+    },
+    "file_upload": {
+        "label": {
+            "document": "Comprovante",
+            "message": {
+                "document": "Comprovante",
+                "view_pdf": "Visualizar Comprovante",
+                "update_document": "Atualizar Comprovante"
+            }
+        }
+    }
+}

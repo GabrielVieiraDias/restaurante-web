@@ -1,0 +1,85 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.containerMenu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: #133337;
+  color: #dee2e6;
+}
+
+mat-expansion-panel {
+  background-color: #00000038;
+  margin-bottom: 5px;
+}
+
+mat-expansion-panel:hover > mat-expansion-panel-header {
+  background-color: #c7bfbf38;
+}
+
+.mat-list-item, mat-panel-title {
+  color: #dee2e6;
+  font-weight: bold;
+}
+
+.mat-list-item:hover {
+  background-color: #c7bfbf38;
+}
+
+mat-expansion-panel mat-nav-list:last-child {
+  margin-bottom: 10px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.with-bg {
+  /* background: url('../../assets/images/office.jpg') no-repeat center; */
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  max-height: 130px;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px !important;
+  padding-left: 10px !important;
+}
+
+.header-box-shadow {
+  box-shadow: 0 1px 2px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.bottom-to-top {
+  border: 0px;
+  border-right: 1px;
+  border-style: solid;
+  border-image:
+  linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%
+}
+
+.dashboard {
+  margin: 25px;
+}
+
+::ng-deep .mat-expansion-indicator::after,
+::ng-deep .mat-expansion-panel-header-description {
+  color: rgba(226, 28, 28, 0.54);
+}
